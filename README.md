@@ -158,8 +158,8 @@ sudo apt-get install -y libgl1
 ### Clone the repository
 
 ```bash
-git clone https://github.com/Won-Seong/diffusion-mcmc.git
-cd diffusion-mcmc
+git clone https://github.com/Won-Seong/bamc.git
+cd bamc
 ```
 
 ### Install dependencies
