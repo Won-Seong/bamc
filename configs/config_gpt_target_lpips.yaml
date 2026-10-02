@@ -1,0 +1,31 @@
+model:
+  model_id: "Tongyi-MAI/Z-Image"
+  vlm_id: "gemini-3.1-flash-lite"
+  image_generator_id: "gpt-image-1"
+
+prompt:
+  vlm_generate_prompt: |
+    Select a random age, gender, ethnicity, hair color, eye shape/color, nose shape, and jawline. Then, write a single, detailed image generation prompt describing a strictly front-facing portrait with those exact, specific features. Do not use conversational filler; just output the prompt.
+  vlm_describe_prompt: |
+    Describe the person exactly how a casual human observer would summarize: note their approximate age, gender, ethnicity, hair style/color, expression, and one or two defining features. Do not over-analyze micro-details, skin textures, or exact technical camera setups. Use a natural mix of short phrases and keywords. Output only the prompt text, with zero conversational filler.
+
+process:
+  acceptance_prob_func: "barker"
+  num_inference_steps: 50
+  num_train_timesteps: 1000
+  num_loop: 1024
+  num_samples_init: 16
+  num_samples_in_loop: 1
+  guidance_scale_init: 5.0
+  guidance_scale_in_loop: 5.0
+  temperature: 0.002
+
+experiments:
+  seed: 1234
+  type: "faces"
+  input_dir: "images/targets/gpt/faces/"
+  num_targets: 9
+  output_dir: "images/results/faces_gpt/"
+
+evaluator:
+  name: "LPIPS"

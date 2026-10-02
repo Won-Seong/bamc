@@ -1,0 +1,30 @@
+[project]
+name = "diffusion-mcmc"
+version = "0.1.0"
+description = "Official implementation of BAMC: Barker-Aligned Monte Carlo for Preference-Guided Search (ACCV 2026)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "diffusers[torch]>=0.37.1",
+    "python-dotenv>=0.9.9",
+    "easydict>=1.13",
+    "google-genai>=2.4.0",
+    "insightface>=0.7.3",
+    "matplotlib>=3.10.8",
+    "opencv-python-headless>=4.13.0.92",
+    "pillow>=12.2.0",
+    "pydantic>=2.13.3",
+    "streamlit>=1.57.0",
+    "torch==2.10",
+    "torchmetrics[image]>=1.9.0",
+    "torchvision==0.25.0",
+    "transformers==5.5.0",
+    "onnxruntime>=1.27.0",
+    "pandas>=3.0.6",
+    "seaborn>=0.13.2",
+]
+
+[tool.uv]
+override-dependencies = [
+    "opencv-python; python_version < '0'",
+]

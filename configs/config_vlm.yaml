@@ -1,0 +1,71 @@
+model:
+  model_id: "Tongyi-MAI/Z-Image"
+  vlm_id: "gemini-3.1-flash-lite"
+  image_generator_id: "Tongyi-MAI/Z-Image"
+
+prompt:
+  vlm_generate_prompt: |
+    Select a random age, gender, ethnicity, hair color, eye shape/color, nose shape, and jawline. Then, write a single, detailed image generation prompt describing a strictly front-facing portrait with those exact, specific features. Do not use conversational filler; just output the prompt.
+  vlm_describe_prompt: |
+    Describe the person exactly how a casual human observer would summarize: note their approximate age, gender, ethnicity, hair style/color, expression, and one or two defining features. Do not over-analyze micro-details, skin textures, or exact technical camera setups. Use a natural mix of short phrases and keywords. Output only the prompt text, with zero conversational filler.
+  vlm_calculate_distance_prompt: |
+    You are an expert Vision-Language Model specialized in facial identity similarity assessment.
+
+    Your task is to evaluate how closely a given input face image matches a reference target face image. Both images contain a frontal human face.
+
+    INPUTS:
+    You will be provided with exactly two images in the following order:
+    1. Image 1: The "Target" face image (the reference point).
+    2. Image 2: The "Input" face image (the face to be evaluated).
+
+    INSTRUCTIONS:
+    1. Carefully analyze the Target face image, focusing on facial structure, features, expression, and overall facial identity.
+    2. Compare the Input face to the Target face based on those facial characteristics.
+    3. Write down your reasoning explaining the similarities and differences between the two faces.
+    4. Assign a similarity score from 1 to 100.
+
+    CONSTRAINTS:
+    - You MUST output your response strictly matching the provided JSON schema.
+    - The `reasoning` field MUST be a single line of text containing exactly 1 or 2 sentences. Do NOT include any newline characters (\n) or line breaks.
+    - The score MUST be a valid integer between 1 and 100.
+    - Ignore image quality, lighting, color tone, sharpness, and background whenever possible. Base your decision primarily on facial identity.
+  vlm_calculate_distances_batch_prompt: |
+    You are an expert Vision-Language Model specialized in facial identity similarity assessment.
+
+    Your task is to compare two candidate face images against a target face image and determine which candidate's face is closer to the target. All images contain a frontal human face.
+
+    INPUTS:
+    You will be provided with exactly three images in the following order:
+    1. Image 1: The "Target" face image (the reference point).
+    2. Image 2: The "Existing" face image (candidate A).
+    3. Image 3: The "New" face image (candidate B).
+
+    INSTRUCTIONS:
+    1. Carefully analyze the Target face image, focusing on facial structure, features, expression, and overall facial identity.
+    2. Evaluate the "Existing" face and the "New" face against the Target face.
+    3. Write down your reasoning comparing both candidate faces to the target. Explain strengths and weaknesses of each in terms of facial similarity.
+    4. Conclude which face ("existing" or "new") is definitively closer to the Target face identity.
+    5. Assign a similarity score from 1 to 100 for your selected face.
+
+    CONSTRAINTS:
+    - You MUST output your response strictly matching the provided JSON schema.
+    - The `reasoning` field MUST be a single line of text containing exactly 1 or 2 sentences. Do NOT include any newline characters (\n) or line breaks.
+    - The `selection` field must be exactly "existing" or "new".
+    - The score MUST be a valid integer between 1 and 100.
+    - Ignore image quality, lighting, color tone, sharpness, and background whenever possible. Base your decision primarily on facial identity.
+process:
+  num_inference_steps: 50
+  num_train_timesteps: 1000
+  num_loop: 128
+  num_samples_init: 16
+  num_samples_in_loop: 1
+  guidance_scale_init: 5.0
+  guidance_scale_in_loop: 5.0
+  strength: 0.6
+
+experiments:
+  seed: 1234
+  type: "faces"
+  input_dir: "images/targets/z-image/faces/"
+  num_targets: 9
+  output_dir: "images/results/vlm/"

@@ -1,0 +1,17 @@
+pillow
+torch==2.10
+diffusers[torch]
+transformers==5.5.0
+torchvision
+matplotlib
+torchmetrics[image]
+google-genai
+python-dotenv
+pydantic
+insightface
+onnxruntime
+opencv-python-headless
+easydict
+streamlit
+pandas
+seaborn
