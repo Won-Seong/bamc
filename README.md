@@ -1,6 +1,6 @@
 # BAMC: Barker-Aligned Monte Carlo for Preference-Guided Search
 
-[![ACCV 2026](https://img.shields.io/badge/ACCV%202026-Accepted-success.svg)](https://accv2026.org/)
+[![ACCV 2026](https://img.shields.io/badge/ACCV%202026-Accepted-success.svg)](https://accv2026.org/accepted-papers/)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg)](https://pytorch.org/)
 [![Diffusers](https://img.shields.io/badge/Diffusers-0.37%2B-yellow.svg)](https://github.com/huggingface/diffusers)
