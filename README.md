@@ -460,9 +460,3 @@ The citation entry will be updated when the final proceedings metadata becomes a
 ## License
 
 This project is released under the [Apache License 2.0](LICENSE).
-
----
-
-## Acknowledgements
-
-This research was supported by the Institute of Information & Communication Technology Planning & Evaluation (IITP) under the Leading Generative AI Human Resources Development (IITP-2026-RS-2026-25544188) grant funded by the Korea government (MSIT).
