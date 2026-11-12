@@ -1,5 +1,6 @@
 # BAMC: Barker-Aligned Monte Carlo for Preference-Guided Search
 
+[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b.svg)](https://github.com/Won-Seong/bamc/releases/download/v1.0/MainPaper.pdf)
 [![ACCV 2026](https://img.shields.io/badge/ACCV%202026-Accepted-success.svg)](https://accv2026.org/accepted-papers/)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.x-ee4c2c.svg)](https://pytorch.org/)
@@ -7,11 +8,7 @@
 [![Managed by uv](https://img.shields.io/badge/Managed%20by-uv-blueviolet.svg)](https://github.com/astral-sh/uv)
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](LICENSE)
 
-Official PyTorch implementation of
-
-**BAMC: Barker-Aligned Monte Carlo for Preference-Guided Search**
-
-accepted to the **18th Asian Conference on Computer Vision (ACCV 2026)**.
+Official PyTorch implementation of **BAMC: Barker-Aligned Monte Carlo for Preference-Guided Search**, accepted to the **18th Asian Conference on Computer Vision (ACCV 2026)**.
 
 ---
 
