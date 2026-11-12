@@ -430,16 +430,6 @@ For complete quantitative results, ablations, and qualitative comparisons, pleas
 
 ---
 
-## Paper
-
-**BAMC: Barker-Aligned Monte Carlo for Preference-Guided Search**  
-Sungwon Kim  
-Asian Conference on Computer Vision (**ACCV 2026**)
-
-Paper and supplementary links will be added upon public release.
-
----
-
 ## Citation
 
 If you find this work useful, please cite:
